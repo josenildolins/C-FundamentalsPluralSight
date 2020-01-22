@@ -3,21 +3,51 @@ using Xunit;
 
 namespace GradeBook.Tests
 {
+    public delegate string WriteLogDelegate(string logMessage);
     public class TypeTests
     {
+        int count = 0;
 
         [Fact]
-        public void Test1(){
-            
+        public void WriteLogDelegateCanPointMethod()
+        {
+            WriteLogDelegate log = ReturnMessage;
+            log += ReturnMessage;
+            log += IncrementCount;
+
+            var result = log("Hello");
+            Assert.Equal(3, count);
+
+        }
+
+        
+         string IncrementCount(string message)
+        {
+            count++;
+            return message.ToLower();
+
+        }
+
+        string ReturnMessage(string message)
+        {
+            count++;
+            return message;
+
+        }
+
+        [Fact]
+        public void Test1()
+        {
+
             var x = GetInt();
             SetInt(ref x);
 
-            Assert.Equal(42,x);
+            Assert.Equal(42, x);
         }
 
         private void SetInt(ref int x)
         {
-           x = 42;
+            x = 42;
         }
 
         private int GetInt()
@@ -37,9 +67,9 @@ namespace GradeBook.Tests
         private void GetBookSetName(out Book book, string name)
         {
             book = new Book(name);
-            
+
         }
-        
+
         [Fact]
         public void CSharpIsPassByValue()
         {
@@ -52,7 +82,7 @@ namespace GradeBook.Tests
         private void GetBookSetName(Book book, string name)
         {
             book = new Book(name);
-            
+
         }
 
 
@@ -82,7 +112,7 @@ namespace GradeBook.Tests
 
         private string MakeUpperCase(string parameter)
         {
-           return parameter.ToUpper();
+            return parameter.ToUpper();
         }
 
         [Fact]

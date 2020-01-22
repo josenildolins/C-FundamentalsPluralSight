@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="&#x0D;&#x0A;&#x09;public void goToJavaPath() {&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;// Browser.driver.findElement(By.linkText(&quot;SEE ALL PATHS&quot;)).click(); &#x0D;&#x0A;&#x09;&#x09; Browser.driver.findElement(By.cssSelector(&quot;.item:nth-child(177) .item-each&quot;)).click();&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;}"/>
+		<list key="findhistory">
+			<item value="&#x0D;&#x0A;&#x09;public void goToJavaPath() {&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;// Browser.driver.findElement(By.linkText(&quot;SEE ALL PATHS&quot;)).click(); &#x0D;&#x0A;&#x09;&#x09; Browser.driver.findElement(By.cssSelector(&quot;.item:nth-child(177) .item-each&quot;)).click();&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;}"/>
+		</list>
+	</section>
+</section>

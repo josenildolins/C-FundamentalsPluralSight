@@ -1,0 +1,37 @@
+package com.pluralsight;
+
+import org.openqa.selenium.By;
+
+public class PathPages {
+
+	static String url = "https://www.pluralsight.com/paths";
+	static String title = "Java | Pluralsight";
+	
+	public void goTo() {
+		Browser.goTo(url);
+		
+	}
+	
+	public void goToJavaPath() {
+		
+		try {
+			//Browser.driver.findElement(By.cssSelector(".item:nth-child(176) .item-text")).click();
+			Browser.driver.findElement(By.xpath("//*[@id=\"pathContent\"]/div[176]/a")).click();
+			
+		} finally {
+			
+		}
+		
+		//Browser.driver.findElement(By.cssSelector(".item:nth-child(176) .item-text")).click();
+	    //assertThat(driver.getTitle(), is("Java | Pluralsight"));
+		
+	}
+	
+	public boolean isAt() {
+		return Browser.title().equals(title);
+	}
+
+	
+	
+
+}

@@ -1,0 +1,18 @@
+package com.pluralsight;
+
+public class PathPages {
+
+	static String url = "http://www.pluralsight.com/paths";
+	static String title = "Java Programming Learning Path | Pluralsight";
+	
+	public void goTo() {
+		Browser.goTo(url);
+		
+	}
+	public boolean isAt() {
+		// TODO Auto-generated method stub
+		return Browser.title().equals(title);
+	}
+	
+
+}

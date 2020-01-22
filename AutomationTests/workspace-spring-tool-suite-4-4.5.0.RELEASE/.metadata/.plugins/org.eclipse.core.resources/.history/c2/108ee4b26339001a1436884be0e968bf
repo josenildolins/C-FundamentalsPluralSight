@@ -1,0 +1,15 @@
+package com.pluralsight;
+
+public class HomePage {
+
+	static String url = "http://www.pluralsight.com";
+	public void goTo() {
+		Browser.goTo(url);
+		
+	}
+	public boolean isAt() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

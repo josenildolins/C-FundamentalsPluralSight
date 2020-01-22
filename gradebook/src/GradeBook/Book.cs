@@ -5,14 +5,17 @@ namespace GradeBook
 {
     public class Book
     {
+        public delegate void GradeAddeddelegate(object sender,EventArgs args);
         public Book(string name)
         {
             grades = new List<double>();
             this.Name = name;
         }
 
-        public void AddLetterGrade(char letter){
-            switch(letter){
+        public void AddGrade(char letter)
+        {
+            switch (letter)
+            {
                 case 'A':
                     AddGrade(90);
                     break;
@@ -25,7 +28,7 @@ namespace GradeBook
                 default:
                     AddGrade(0);
                     break;
-                
+
             }
         }
         public void AddGrade(double grade)
@@ -33,12 +36,19 @@ namespace GradeBook
             if (grade <= 100 && grade >= 0)
             {
                 grades.Add(grade);
+                if(GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
 
             }
-            else{
+            else
+            {
                 throw new ArgumentException($"Invalid {nameof(grade)}");
             }
         }
+
+        public event GradeAddeddelegate GradeAdded;
 
         public Statistics GetStatistcs()
         {
@@ -55,23 +65,23 @@ namespace GradeBook
             }
             result.Average /= grades.Count;
 
-            switch ( result.Average)
+            switch (result.Average)
             {
                 case var d when d >= 90.0:
-                     result.Letter = 'A';
-                     break;
+                    result.Letter = 'A';
+                    break;
 
                 case var d when d >= 80.0:
-                     result.Letter = 'B';
-                     break;
+                    result.Letter = 'B';
+                    break;
 
                 case var d when d >= 70.0:
-                     result.Letter = 'C';
-                     break;
+                    result.Letter = 'C';
+                    break;
 
                 case var d when d >= 60.0:
-                     result.Letter = 'D';
-                     break;
+                    result.Letter = 'D';
+                    break;
 
                 default:
                     result.Letter = 'F';
@@ -83,7 +93,16 @@ namespace GradeBook
 
 
         private List<double> grades;
-        public string Name;
+
+        public string Name
+        {
+            get;
+            set;
+
+
+        }
+
+        public const string CATEGORY = "Science";
 
     }
 }

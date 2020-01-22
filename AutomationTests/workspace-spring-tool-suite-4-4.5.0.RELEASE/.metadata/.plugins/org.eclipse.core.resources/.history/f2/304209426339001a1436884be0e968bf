@@ -1,0 +1,10 @@
+package com.pluralsight;
+
+public class HomePage {
+
+	public void goTo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,36 @@
+package com.pluralsight;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+
+public class PathPages {
+
+	static String url = "https://www.pluralsight.com/product/paths";
+	static String title = "Java | Pluralsight";
+	
+	public void goTo() {
+		Browser.goTo(url);
+		
+	}
+	
+	public void goToJavaPath() {
+		
+		
+		Browser.driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		Browser.driver.findElement(By.cssSelector(".item:nth-child(178) .item-text")).click();
+		
+		
+		//Browser.driver.findElement(By.cssSelector(".item:nth-child(176) .item-text")).click();
+	    //assertThat(driver.getTitle(), is("Java | Pluralsight"));
+		
+	}
+	
+	public boolean isAt() {
+		return Browser.title().equals(title);
+	}
+
+	
+	
+
+}

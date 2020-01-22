@@ -1,0 +1,10 @@
+package com.pluralsight;
+
+import org.openqa.selenium.By;
+
+public class PathPages {
+
+	
+	
+
+}

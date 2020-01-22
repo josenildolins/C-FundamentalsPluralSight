@@ -1,0 +1,25 @@
+package com.pluralsight;
+
+import org.openqa.selenium.By;
+
+public class PathPages {
+
+	static String url = "http://www.pluralsight.com/paths";
+	static String title = "Java Coding Practices | Pluralsight";
+	
+	public void goTo() {
+		Browser.goTo(url);
+		
+	}
+	
+	public void goToJavaPath() {
+		 Browser.driver.findElement(By.linkText("SEE ALL PATHS")).click();
+		
+	}
+
+	public boolean isAt() {
+		return Browser.title().equals(title);
+	}
+	
+
+}
